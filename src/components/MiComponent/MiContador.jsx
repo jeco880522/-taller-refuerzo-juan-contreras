@@ -13,11 +13,13 @@ const MiContador = () => {
   };
 
   return (
-    <div>
-      <h2>Mi Contador</h2>
-      <p>Contador: {contador}</p>
-      <button onClick={incrementarContador}>Incrementar</button>
-      <button onClick={decrementarContador}>Decrementar</button>
+    <div className='container'>
+      <div className='counter'>
+        <h2>Mi Contador</h2>
+        <p>Contador: {contador}</p>
+        <button onClick={incrementarContador}>Incrementar</button>
+        <button onClick={decrementarContador}>Decrementar</button>
+      </div>
     </div>
   );
 };

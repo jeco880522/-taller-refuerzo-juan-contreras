@@ -1,7 +1,7 @@
-// src/components/Auth/Login.js
 import React, { useState } from 'react';
 import { useAuth } from '../MiComponent/AuthContext';
-import { authenticateUser } from '../MiComponent//authServer';
+import { authenticateUser } from '../MiComponent/authServer';
+import './style.css';
 
 const Login = () => {
   const { login } = useAuth();
@@ -14,10 +14,10 @@ const Login = () => {
       setError('Por favor, ingresa un nombre de usuario y una contraseña.');
       return;
     }
+
     const user = authenticateUser(username, password);
 
     if (user) {
-
       login(user);
     } else {
       setError('Credenciales incorrectas. Por favor, inténtalo de nuevo.');
@@ -25,14 +25,16 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <label>Username:</label>
-      <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-      <label>Password:</label>
-      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <button onClick={handleLogin}>Login</button>
+    <div className="login-container">
+      <h2 className="login-heading">Login</h2>
+      {error && <p className="error-message">{error}</p>}
+      <label className="label-log">Username:</label>
+      <input className="input-log" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+      <label className="label-log">Password:</label>
+      <input className="input-log" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      <button className="button-log" onClick={handleLogin}>
+        Iniciar Sesion
+      </button>
     </div>
   );
 };

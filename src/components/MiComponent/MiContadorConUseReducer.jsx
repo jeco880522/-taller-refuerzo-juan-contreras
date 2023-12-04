@@ -19,11 +19,13 @@ const MiContadorConUseReducer = () => {
   const [state, dispatch] = useReducer(contadorReducer, initialState);
 
   return (
-    <div>
-      <h2>Mi Contador con useReducer</h2>
-      <p>Contador: {state.count}</p>
-      <button onClick={() => dispatch({ type: 'AUMENTAR' })}>Aumentar</button>
-      <button onClick={() => dispatch({ type: 'DISMINUIR' })}>Disminuir</button>
+    <div className='container'>
+      <div className='counter'>
+        <h2>Mi Contador con useReducer</h2>
+        <p>Contador: {state.count}</p>
+        <button onClick={() => dispatch({ type: 'AUMENTAR' })}>Aumentar</button>
+        <button onClick={() => dispatch({ type: 'DISMINUIR' })}>Disminuir</button>
+      </div>
     </div>
   );
 };
