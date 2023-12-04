@@ -25,15 +25,13 @@ const MisProductos = () => {
   return (
     <div>
       <h2>Mis Productos</h2>
-      {/* Controles de filtro */}
       <div>
         <label>Categoría:</label>
         <select onChange={(e) => setFiltros({ ...filtros, categoria: e.target.value })}>
           <option value="">Todos</option>
-          {/* Añade opciones de categoría según tus datos */}
           <option value="smartphones">Smartphones</option>
           <option value="laptops">Laptops</option>
-          {/* ... más opciones ... */}
+
         </select>
 
         <label>Rating:</label>
@@ -41,11 +39,9 @@ const MisProductos = () => {
           <option value="">Todos</option>
           <option value="4">4 estrellas o más</option>
           <option value="3">3 estrellas o más</option>
-          {/* ... más opciones ... */}
         </select>
       </div>
 
-      {/* Lista de productos filtrados */}
       <div className="card-container">
         {productosFiltrados.map(producto => (
           <div className="card">
